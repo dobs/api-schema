@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>PagerDuty API Reference: REST API Documentation</title>
+    <script src="https://unpkg.com/@stoplight/elements/web-components.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@stoplight/elements/styles.min.css"
+    />
+  </head>
+  <body></body>
+  <script src="../script.js"></script>
+  <script>
+    mountRef("REST");
+
+    // Hack to update the placeholder to a standard readonly test token.
+    let tokenInterval = setInterval(() => {
+      const value = "Token token=y_NbAkKc66ryYTWUXYEu";
+      const tokenEl = document.querySelector('[id^="id_auth_Authorization"]');
+      console.log("running");
+
+      if (!tokenEl) return;
+
+      if (tokenEl.value) {
+        clearInterval(tokenInterval);
+        return;
+      }
+
+      tokenEl.value = value;
+      tokenEl.dispatchEvent(new Event("input", { bubbles: true }));
+      tokenEl.dispatchEvent(new Event("change"));
+
+      clearInterval(tokenInterval);
+    }, 500);
+  </script>
+</html>
