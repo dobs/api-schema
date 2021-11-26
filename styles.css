@@ -1,0 +1,5 @@
+/* Workarounds for Stoplight's CSS not doing what I think they think it does. */
+body {
+  height: 100vh;
+  overflow: visible;
+}
