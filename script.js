@@ -14,7 +14,8 @@ function mountRef(name) {
   // Create and insert the Elements API doc container.
   const docEl = document.createElement("elements-api");
   docEl.apiDescriptionUrl = `https://raw.githubusercontent.com/pagerduty/api-schema/${branch}/reference/${name}/openapiv3.json`;
+  docEl.layout = window.innerWidth >= 1024 ? "sidebar" : "stacked";
+  docEl.logo = "../logo.png";
   docEl.router = "hash";
-  docEl.layout = "sidebar";
   document.body.append(docEl);
 }
